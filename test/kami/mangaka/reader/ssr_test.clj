@@ -1,6 +1,6 @@
 (ns kami.mangaka.reader.ssr-test
   (:require [clojure.test :refer [deftest is testing]]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [kami.mangaka.reader.ssr :as ssr]
             [kami.mangaka.reader.views :as v]
             [kami.mangaka.hiccup :as h]))
