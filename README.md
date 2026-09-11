@@ -29,10 +29,10 @@ project composes) and `kami-mangaka-render-clj` / `-page-clj` / `-scene`.
 deps.edn                                  ; clj/cljs deps, :cljs and :test aliases
 shadow-cljs.edn                           ; browser build (reader.js)
 package.json / package-lock.json          ; npm deps for shadow-cljs (react, react-dom)
-src/kami/mangaka/reader/views.cljc        ; shared hiccup views (index + chapter)
+src/kami/mangaka/reader/views.cljk        ; shared hiccup views (index + chapter)
 src/kami/mangaka/reader/ssr.clj           ; server-side render to HTML strings
-src/kami/mangaka/reader/app.cljs          ; reagent/re-frame browser hydration
-test/kami/mangaka/reader/ssr_test.clj     ; SSR test
+src/kami/mangaka/reader/app.cljk          ; reagent/re-frame browser hydration
+test/kami/mangaka/reader/ssr_test.cljk     ; SSR test
 ```
 
 ## Known issue: broken monorepo-relative dependency
