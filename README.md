@@ -44,7 +44,7 @@ gftd/kami-mangaka-text-clj {:local/root "../kami-mangaka-text-clj"}
 ```
 
 This pointed at a sibling directory inside the `kami-engine` monorepo. In
-this standalone repo that sibling does not exist, so `clojure -M:test` (and
+this standalone repo that sibling does not exist, so `kbb -M:test` (and
 any other classpath resolution) currently fails with:
 
 ```
@@ -67,14 +67,14 @@ this repo at `../kami-mangaka-text-clj` to restore the relative path locally.
 ## Build / run
 
 This project was **not** built end-to-end as part of the migration (npm
-install / shadow-cljs compile were intentionally skipped — slow and not the
+install / amu compile --target wasm32-browser were intentionally skipped — slow and not the
 point of a copy-out verification). Once the `kami-mangaka-text-clj`
 dependency above is resolved:
 
 ```bash
 npm install
-npx shadow-cljs release reader   # -> dist/reader.js (single-module browser build)
-clojure -M:test                  # SSR test suite (needs the classpath fix above)
+amu compile --target wasm32-browser reader   # -> dist/reader.js (single-module browser build)
+kbb -M:test                  # SSR test suite (needs the classpath fix above)
 ```
 
 The `:reader` shadow-cljs build target's `:init-fn` is
