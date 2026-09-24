@@ -6,3 +6,4 @@ dist/
 *.jar
 target/
 *.log
+.nbb/
